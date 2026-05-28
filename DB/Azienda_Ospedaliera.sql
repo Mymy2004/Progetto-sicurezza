@@ -1,10 +1,9 @@
 -- Active: 1779979463001@@localhost@5432@azienda_ospedaliera@public
-DROP DATABASE IF EXISTS Azienda_Ospedaliera;
-
-DROP TABLE IF EXISTS Pazienti, Medici, Farmaci, Prescrizioni, Farmaci;
-
+-- DROP DATABASE IF EXISTS Azienda_Ospedaliera;
 -- Creazione Database
-CREATE DATABASE  Azienda_Ospedaliera;
+-- CREATE DATABASE Azienda_Ospedaliera;
+
+DROP TABLE IF EXISTS Pazienti, Personale_Medico, Farmaci, Prescrizioni CASCADE;
 
 -- Creazione Tabella Pazienti
 CREATE TABLE Pazienti (
@@ -20,7 +19,7 @@ CREATE TABLE Personale_Medico (
     Nome VARCHAR(100) NOT NULL,
     Cognome VARCHAR(100) NOT NULL,
     Organizzazione VARCHAR(255) NOT NULL,
-    Tipo VARCHAR(50) NOT NULL
+    Ruolo VARCHAR(50) NOT NULL
 );
 
 -- Creazione Tabella Farmaci (Catalogo)
@@ -40,7 +39,7 @@ CREATE TABLE Prescrizioni (
     Dettaglio TEXT NOT NULL,
     -- Definizione dei vincoli di chiave esterna (Foreign Keys)
     FOREIGN KEY (ID_Paziente) REFERENCES Pazienti(ID_Paziente) ON DELETE CASCADE,
-    FOREIGN KEY (ID_Medico) REFERENCES Medici(ID_Medico) ON DELETE CASCADE,
+    FOREIGN KEY (ID_Medico) REFERENCES Personale_Medico(ID_Medico) ON DELETE CASCADE,
     FOREIGN KEY (Codice_AIC) REFERENCES Farmaci(Codice_AIC) ON DELETE CASCADE
 );
 
@@ -49,8 +48,8 @@ INSERT INTO Pazienti (ID_Paziente, Codice_Fiscale, Nome, Cognome)
 VALUES ('PT-001', 'VRDLGU80M15H501Z', 'Luigi', 'Verdi');
 
 -- Inserimento medico
-INSERT INTO Medici (ID_Medico, Nome, Cognome, Organizzazione) 
-VALUES ('MED-120101', 'Mario', 'Bianchi', 'Sistema TS');
+INSERT INTO Personale_Medico (ID_Medico, Nome, Cognome, Organizzazione, Ruolo) 
+VALUES ('MED-120101', 'Mario', 'Bianchi', 'Sistema TS', 'Medico');
 
 -- Inserimento farmaco
 INSERT INTO Farmaci (Codice_AIC, Nome_Farmaco) 
