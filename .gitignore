@@ -1,0 +1,21 @@
+# File di sistema macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# File di sistema Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Cartelle del tuo Editor (VS Code)
+.vscode/
+*.code-workspace
+
+# Se usi pacchetti esterni in futuro (es. Node.js)
+node_modules/
+dist/
+build/
+
+# File di log
+*.log
