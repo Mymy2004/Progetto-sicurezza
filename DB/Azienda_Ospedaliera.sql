@@ -3,7 +3,7 @@
 -- Creazione Database
 -- CREATE DATABASE Azienda_Ospedaliera;
 
-DROP TABLE IF EXISTS Pazienti, Personale_Medico, Farmaci, Prescrizioni CASCADE;
+DROP TABLE IF EXISTS Pazienti, Medici, Farmaci, Prescrizioni CASCADE;
 
 -- Creazione Tabella Pazienti
 CREATE TABLE Pazienti (
@@ -14,12 +14,10 @@ CREATE TABLE Pazienti (
 );
 
 -- Creazione Tabella Medici
-CREATE TABLE Personale_Medico (
+CREATE TABLE Medici (
     ID_Medico VARCHAR(50) PRIMARY KEY,
     Nome VARCHAR(100) NOT NULL,
-    Cognome VARCHAR(100) NOT NULL,
-    Organizzazione VARCHAR(255) NOT NULL,
-    Ruolo VARCHAR(50) NOT NULL
+    Cognome VARCHAR(100) NOT NULL
 );
 
 -- Creazione Tabella Farmaci (Catalogo)
@@ -37,9 +35,10 @@ CREATE TABLE Prescrizioni (
     Data_Emissione DATE NOT NULL,
     Quantita INT NOT NULL,
     Dettaglio TEXT NOT NULL,
+    Organizzazione VARCHAR(255) NOT NULL,
     -- Definizione dei vincoli di chiave esterna (Foreign Keys)
     FOREIGN KEY (ID_Paziente) REFERENCES Pazienti(ID_Paziente) ON DELETE CASCADE,
-    FOREIGN KEY (ID_Medico) REFERENCES Personale_Medico(ID_Medico) ON DELETE CASCADE,
+    FOREIGN KEY (ID_Medico) REFERENCES Medici(ID_Medico) ON DELETE CASCADE,
     FOREIGN KEY (Codice_AIC) REFERENCES Farmaci(Codice_AIC) ON DELETE CASCADE
 );
 
@@ -48,18 +47,18 @@ INSERT INTO Pazienti (ID_Paziente, Codice_Fiscale, Nome, Cognome)
 VALUES ('PT-001', 'VRDLGU80M15H501Z', 'Luigi', 'Verdi');
 
 -- Inserimento medico
-INSERT INTO Personale_Medico (ID_Medico, Nome, Cognome, Organizzazione, Ruolo) 
-VALUES ('MED-120101', 'Mario', 'Bianchi', 'Sistema TS', 'Medico');
+INSERT INTO Medici (ID_Medico, Nome, Cognome) 
+VALUES ('MED-120101', 'Mario', 'Bianchi');
 
 -- Inserimento farmaco
 INSERT INTO Farmaci (Codice_AIC, Nome_Farmaco) 
 VALUES ('012745098', 'TACHIPIRINA*10CPR RIV 1000MG');
 
 -- Inserimento Prescrizione
-INSERT INTO Prescrizioni (ID_Prescrizione, ID_Paziente, ID_Medico, Codice_AIC, Data_Emissione, Quantita, Dettaglio) 
-VALUES ('PRF-2026-9999', 'PT-001', 'MED-120101', '012745098', '2026-05-11 11:30:00', 1, 'Paracetamolo 1000mg, 1 conf');
+INSERT INTO Prescrizioni (ID_Prescrizione, ID_Paziente, ID_Medico, Codice_AIC, Data_Emissione, Quantita, Dettaglio, Organizzazione) 
+VALUES ('PRF-2026-9999', 'PT-001', 'MED-120101', '012745098', '2026-05-11 11:30:00', 1, 'Paracetamolo 1000mg, 1 conf', 'Sistema TS');
 
-SELECT pr.Data_Emissione, pr.ID_Prescrizione, fa.Nome_Farmaco, pr.Dettaglio,
+SELECT pr.Data_Emissione, pr.ID_Prescrizione, fa.Nome_Farmaco, pr.Dettaglio, pr.Organizzazione,
     me.Cognome AS medico
 FROM Prescrizioni pr
 JOIN Pazienti pa ON pr.ID_Paziente = pa.ID_Paziente
@@ -68,8 +67,13 @@ JOIN Medici me ON pr.ID_Medico = me.ID_Medico
 WHERE pa.Nome = 'Luigi' AND pa.Cognome = 'Verdi'
 ORDER BY pr.Data_Emissione DESC;
 
--- Esportazione per anonimizzazione
-SELECT pa.Nome, pa.Cognome, fa.Nome_Farmaco
+-- Esportazione per anonimizzazione in file csv
+SELECT 
+    pa.Nome AS Nome_Paziente,
+    pa.Cognome AS Cognome_Paziente,
+    pa.Codice_Fiscale,
+    pr.Data_Emissione,
+    fa.Nome_Farmaco
 FROM Prescrizioni pr 
 JOIN Pazienti pa ON pr.ID_Paziente = pa.ID_Paziente
 JOIN Farmaci fa ON pr.Codice_AIC = fa.Codice_AIC;
