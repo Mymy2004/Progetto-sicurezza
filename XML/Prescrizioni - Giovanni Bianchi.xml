@@ -1,25 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <realmCode code="IT"/>
     <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
-    <templateId root="2.16.840.1.113883.2.9.10.1.1"/> <!-- Prescrizione Farmaceutica -->
-    <id root="2.16.840.1.113883.2.9.2.120.4.4" extension="PRF-2026-9999"/>
+    <templateId root="2.16.840.1.113883.2.9.10.1.1"/> <id root="2.16.840.1.113883.2.9.2.120.4.4" extension="PRF-2026-0003"/>
+    <!--  Prescrizione Farmaceutica  -->
     <code code="57833-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Prescription for medication"/>
     <title>Ricetta Medica Elettronica - Prescrizione Farmaceutica</title>
-    <effectiveTime value="20260511113000+0200"/>
+    <effectiveTime value="20260514090000+0200"/>
     <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
     <languageCode code="it-IT"/>
     <recordTarget>
         <patientRole>
-            <id root="2.16.840.1.113883.2.9.4.3.2" extension="RSSMRA80A01H501U"/>
-            <patient><name><given>Mario</given><family>Rossi</family></name></patient>
+            <id root="2.16.840.1.113883.2.9.4.3.2" extension="BNCGNN75T10F205A"/>
+            <patient>
+                <name>
+                    <given>Giovanni</given>
+                    <family>Bianchi</family>
+                </name>
+            </patient>
         </patientRole>
     </recordTarget>
     <author>
-        <time value="20260511113000+0200"/>
+        <time value="20260514090000+0200"/>
         <assignedAuthor>
-            <id root="2.16.840.1.113883.2.9.4.3.2" extension="MED12345"/>
-            <assignedPerson><name><given>Luigi</given><family>Verdi</family></name></assignedPerson>
+            <id root="2.16.840.1.113883.2.9.4.3.2" extension="MED-120101"/>
+            <assignedPerson>
+                <name>
+                    <given>Mario</given>
+                    <family>Bianchi</family>
+                </name>
+            </assignedPerson>
         </assignedAuthor>
     </author>
     <custodian>
@@ -36,14 +45,14 @@
                 <section>
                     <code code="57828-6" codeSystem="2.16.840.1.113883.6.1" displayName="Prescriptions"/>
                     <title>Dettaglio Prescrizione</title>
-                    <text>Paracetamolo 1000mg, 1 conf</text>
+                    <text>Oki bustine, 1 confezione per cefalea tensiva</text>
                     <entry>
                         <supply classCode="SPLY" moodCode="RQO">
                             <quantity value="1"/>
                             <product>
                                 <manufacturedProduct>
                                     <manufacturedMaterial>
-                                        <code code="012745098" codeSystem="2.16.840.1.113883.2.9.6.1.5" displayName="TACHIPIRINA*10CPR RIV 1000MG"/>
+                                        <code code="025218041" codeSystem="2.16.840.1.113883.2.9.6.1.5" displayName="OKI*30BUST 80MG"/>
                                     </manufacturedMaterial>
                                 </manufacturedProduct>
                             </product>
