@@ -74,7 +74,8 @@ VALUES ('PRF-2026-9999', 'PT-001', 'MED-120101', '012745098', '2026-05-11 11:30:
 ('PRF-2026-0008', 'PT-004', 'MED-120102', '031835012', '2026-05-19', 1, 'Brufen 600mg, 1 confezione post-estrattiva', 'Sistema TS'),
 ('PRF-2026-0009', 'PT-002', 'MED-120102', '012745098', '2026-05-20', 1, 'Paracetamolo 1000mg, 1 conf per stato influenzale', 'Sistema TS');
 
-SELECT pr.Data_Emissione, pr.ID_Prescrizione, fa.Nome_Farmaco, pr.Dettaglio, pr.Organizzazione, me.Cognome AS medico
+SELECT pr.Data_Emissione, pr.ID_Prescrizione, fa.Nome_Farmaco, pr.Dettaglio, pr.Organizzazione,
+    me.Cognome AS medico
 FROM Prescrizioni pr
 JOIN Pazienti pa ON pr.ID_Paziente = pa.ID_Paziente
 JOIN Farmaci fa ON pr.Codice_AIC = fa.Codice_AIC
@@ -83,7 +84,12 @@ WHERE pa.Nome = 'Luigi' AND pa.Cognome = 'Verdi'
 ORDER BY pr.Data_Emissione DESC;
 
 -- Esportazione per anonimizzazione in file csv
-SELECT pa.Nome AS Nome_Paziente, pa.Cognome AS Cognome_Paziente, pa.Codice_Fiscale, pr.Data_Emissione, fa.Nome_Farmaco
+SELECT 
+    pa.Nome AS Nome_Paziente,
+    pa.Cognome AS Cognome_Paziente,
+    pa.Codice_Fiscale,
+    pr.Data_Emissione,
+    fa.Nome_Farmaco
 FROM Prescrizioni pr 
 JOIN Pazienti pa ON pr.ID_Paziente = pa.ID_Paziente
 JOIN Farmaci fa ON pr.Codice_AIC = fa.Codice_AIC;
