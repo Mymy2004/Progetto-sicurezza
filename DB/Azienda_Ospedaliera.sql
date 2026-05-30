@@ -44,19 +44,35 @@ CREATE TABLE Prescrizioni (
 
 -- Inserimento del paziente
 INSERT INTO Pazienti (ID_Paziente, Codice_Fiscale, Nome, Cognome) 
-VALUES ('PT-001', 'VRDLGU80M15H501Z', 'Luigi', 'Verdi');
+VALUES ('PT-001', 'VRDLGU80M15H501Z', 'Luigi', 'Verdi'),
+('PT-002', 'RSSMRA80A01H501U', 'Mario', 'Rossi'),
+('PT-003', 'BNCGNN75T10F205A', 'Giovanni', 'Bianchi'),
+('PT-004', 'FRRLRA92A01H501F', 'Laura', 'Ferrari');
 
 -- Inserimento medico
 INSERT INTO Medici (ID_Medico, Nome, Cognome) 
-VALUES ('MED-120101', 'Mario', 'Bianchi');
+VALUES ('MED-120101', 'Mario', 'Bianchi'),
+VALUES ('MED-120102', 'Elena', 'Russo');
 
 -- Inserimento farmaco
 INSERT INTO Farmaci (Codice_AIC, Nome_Farmaco) 
-VALUES ('012745098', 'TACHIPIRINA*10CPR RIV 1000MG');
+VALUES ('012745098', 'TACHIPIRINA*10CPR RIV 1000MG'),
+('035154035', 'AUGMENTIN*12CPR RIV 875MG+125MG'),
+('025218041', 'OKI*30BUST 80MG'),
+('031835012', 'BRUFEN*30CPR RIV 600MG');
 
 -- Inserimento Prescrizione
 INSERT INTO Prescrizioni (ID_Prescrizione, ID_Paziente, ID_Medico, Codice_AIC, Data_Emissione, Quantita, Dettaglio, Organizzazione) 
-VALUES ('PRF-2026-9999', 'PT-001', 'MED-120101', '012745098', '2026-05-11 11:30:00', 1, 'Paracetamolo 1000mg, 1 conf', 'Sistema TS');
+VALUES ('PRF-2026-9999', 'PT-001', 'MED-120101', '012745098', '2026-05-11 11:30:00', 1, 'Paracetamolo 1000mg, 1 conf', 'Sistema TS'),
+('PRF-2026-0001', 'PT-002', 'MED-120101', '012745098', '2026-05-12', 2, 'Tachipirina 1000mg, 2 confezioni - Trattamento iperpiressia', 'Sistema TS'),
+('PRF-2026-0002', 'PT-001', 'MED-120101', '035154035', '2026-05-13', 1, 'Augmentin compresse, 1 confezione - Terapia antibiotica', 'Sistema TS'),
+('PRF-2026-0003', 'PT-003', 'MED-120101', '025218041', '2026-05-14', 1, 'Oki bustine, 1 confezione per cefalea tensiva', 'Sistema TS'),
+('PRF-2026-0004', 'PT-004', 'MED-120101', '031835012', '2026-05-15', 1, 'Brufen 600mg, 1 confezione per algie articolari', 'Sistema TS'),
+('PRF-2026-0005', 'PT-002', 'MED-120101', '035154035', '2026-05-16', 1, 'Augmentin compresse, 1 confezione - Terapia di follow-up', 'Sistema TS'),
+('PRF-2026-0006', 'PT-001', 'MED-120102', '012745098', '2026-05-17', 1, 'Tachipirina 1000mg, 1 confezione al bisogno', 'Sistema TS'),
+('PRF-2026-0007', 'PT-003', 'MED-120102', '025218041', '2026-05-18', 2, 'Oki 80mg bustine, 2 confezioni - Trattamento antinfiammatorio', 'Sistema TS'),
+('PRF-2026-0008', 'PT-004', 'MED-120102', '031835012', '2026-05-19', 1, 'Brufen 600mg, 1 confezione post-estrattiva', 'Sistema TS'),
+('PRF-2026-0009', 'PT-002', 'MED-120102', '012745098', '2026-05-20', 1, 'Paracetamolo 1000mg, 1 conf per stato influenzale', 'Sistema TS');
 
 SELECT pr.Data_Emissione, pr.ID_Prescrizione, fa.Nome_Farmaco, pr.Dettaglio, pr.Organizzazione,
     me.Cognome AS medico
