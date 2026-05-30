@@ -52,7 +52,7 @@ VALUES ('PT-001', 'VRDLGU80M15H501Z', 'Luigi', 'Verdi'),
 -- Inserimento medico
 INSERT INTO Medici (ID_Medico, Nome, Cognome) 
 VALUES ('MED-120101', 'Mario', 'Bianchi'),
-VALUES ('MED-120102', 'Elena', 'Russo');
+('MED-120102', 'Elena', 'Russo');
 
 -- Inserimento farmaco
 INSERT INTO Farmaci (Codice_AIC, Nome_Farmaco) 
