@@ -1,0 +1,11 @@
+nome_paziente,cognome_paziente,codice_fiscale,nome_medico,cognome_medico,nome_farmaco,data_emissione,quantita,dettaglio
+Mario,Rossi,RSSMRA80A01H501U,Mario,Bianchi,AUGMENTIN*12CPR RIV 875MG+125MG,2026-05-16,1,"Augmentin compresse, 1 confezione - Terapia di follow-up"
+Laura,Ferrari,FRRLRA92A01H501F,Mario,Bianchi,BRUFEN*30CPR RIV 600MG,2026-05-15,1,"Brufen 600mg, 1 confezione per algie articolari"
+Giovanni,Bianchi,BNCGNN75T10F205A,Mario,Bianchi,OKI*30BUST 80MG,2026-05-14,1,"Oki bustine, 1 confezione per cefalea tensiva"
+Luigi,Verdi,VRDLGU80M15H501Z,Mario,Bianchi,AUGMENTIN*12CPR RIV 875MG+125MG,2026-05-13,1,"Augmentin compresse, 1 confezione - Terapia antibiotica"
+Mario,Rossi,RSSMRA80A01H501U,Mario,Bianchi,TACHIPIRINA*10CPR RIV 1000MG,2026-05-12,2,"Tachipirina 1000mg, 2 confezioni - Trattamento iperpiressia"
+Luigi,Verdi,VRDLGU80M15H501Z,Mario,Bianchi,TACHIPIRINA*10CPR RIV 1000MG,2026-05-11,1,"Paracetamolo 1000mg, 1 conf"
+Mario,Rossi,RSSMRA80A01H501U,Elena,Russo,TACHIPIRINA*10CPR RIV 1000MG,2026-05-20,1,"Paracetamolo 1000mg, 1 conf per stato influenzale"
+Laura,Ferrari,FRRLRA92A01H501F,Elena,Russo,BRUFEN*30CPR RIV 600MG,2026-05-19,1,"Brufen 600mg, 1 confezione post-estrattiva"
+Giovanni,Bianchi,BNCGNN75T10F205A,Elena,Russo,OKI*30BUST 80MG,2026-05-18,2,"Oki 80mg bustine, 2 confezioni - Trattamento antinfiammatorio"
+Luigi,Verdi,VRDLGU80M15H501Z,Elena,Russo,TACHIPIRINA*10CPR RIV 1000MG,2026-05-17,1,"Tachipirina 1000mg, 1 confezione al bisogno"
