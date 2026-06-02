@@ -82,13 +82,3 @@ JOIN Farmaci fa ON pr.Codice_AIC = fa.Codice_AIC
 JOIN Medici me ON pr.ID_Medico = me.ID_Medico
 WHERE pa.Nome = 'Luigi' AND pa.Cognome = 'Verdi'
 ORDER BY pr.Data_Emissione DESC;
-
--- Esportazione per anonimizzazione in file csv
-SELECT pa.Nome AS Nome_Paziente, pa.Cognome AS Cognome_Paziente,pa.Codice_Fiscale,
-    me.Nome AS Nome_Medico, me.Cognome AS Cognome_Medico,
-    fa.Nome_Farmaco, 
-    pr.Data_Emissione, pr.Quantita, pr.Dettaglio
-FROM Prescrizioni pr
-JOIN Pazienti pa ON pr.ID_Paziente = pa.ID_Paziente
-JOIN Medici me ON pr.ID_Medico = me.ID_Medico
-JOIN Farmaci fa ON pr.Codice_AIC = fa.Codice_AIC;
