@@ -26,7 +26,7 @@ CREATE TABLE Farmaci (
     Nome_Farmaco VARCHAR(255) NOT NULL
 );
 
--- Creazione Tabella Prescrizioni (La tabella che unisce tutto)
+-- Creazione Tabella Prescrizioni
 CREATE TABLE Prescrizioni (
     ID_Prescrizione VARCHAR(50) PRIMARY KEY,
     ID_Paziente VARCHAR(50) NOT NULL,
