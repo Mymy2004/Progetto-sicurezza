@@ -1,11 +1,11 @@
 id_prescrizione,codice_fiscale,id_medico,codice_aic,data_emissione,quantita,dettaglio,organizzazione
-PRF-2026-9999,RSSMRA80A01H501U,MED-120101,012745098,2026-05-11,1,"Paracetamolo 1000mg, 1 conf",Sistema TS
-PRF-2026-0001,RSSMRA80A01H501U,MED-120101,012745098,2026-05-12,2,"Tachipirina 1000mg, 2 confezioni - Trattamento iperpiressia",Sistema TS
-PRF-2026-0002,VRDLGU80M15H501Z,MED-120101,035154035,2026-05-13,1,"Augmentin compresse, 1 confezione - Terapia antibiotica",Sistema TS
-PRF-2026-0003,BNCGNN75T10F205A,MED-120101,025218041,2026-05-14,1,"Oki bustine, 1 confezione per cefalea tensiva",Sistema TS
-PRF-2026-0004,FRRLRA92A01H501F,MED-120101,031835012,2026-05-15,1,"Brufen 600mg, 1 confezione per algie articolari",Sistema TS
-PRF-2026-0005,RSSMRA80A01H501U,MED-120101,035154035,2026-05-16,1,"Augmentin compresse, 1 confezione - Terapia di follow-up",Sistema TS
-PRF-2026-0006,VRDLGU80M15H501Z,MED-120102,012745098,2026-05-17,1,"Tachipirina 1000mg, 1 confezione al bisogno",Sistema TS
-PRF-2026-0007,BNCGNN75T10F205A,MED-120102,025218041,2026-05-18,2,"Oki 80mg bustine, 2 confezioni - Trattamento antinfiammatorio",Sistema TS
-PRF-2026-0008,FRRLRA92A01H501F,MED-120102,031835012,2026-05-19,1,"Brufen 600mg, 1 confezione post-estrattiva",Sistema TS
-PRF-2026-0009,RSSMRA80A01H501U,MED-120102,012745098,2026-05-20,1,"Paracetamolo 1000mg, 1 conf per stato influenzale",Sistema TS
+PRF-2026-9999,RSSMRA80A01H501U,MED-120101,012745098,2026-05-11,1,"Paracetamolo 1000mg- 1 conf",Sistema TS
+PRF-2026-0001,RSSMRA80A01H501U,MED-120101,012745098,2026-05-12,2,"Tachipirina 1000mg- 2 confezioni - Trattamento iperpiressia",Sistema TS
+PRF-2026-0002,VRDLGU80M15H501Z,MED-120101,035154035,2026-05-13,1,"Augmentin compresse- 1 confezione - Terapia antibiotica",Sistema TS
+PRF-2026-0003,BNCGNN75T10F205A,MED-120101,025218041,2026-05-14,1,"Oki bustine- 1 confezione per cefalea tensiva",Sistema TS
+PRF-2026-0004,FRRLRA92A01H501F,MED-120101,031835012,2026-05-15,1,"Brufen 600mg- 1 confezione per algie articolari",Sistema TS
+PRF-2026-0005,RSSMRA80A01H501U,MED-120101,035154035,2026-05-16,1,"Augmentin compresse- 1 confezione - Terapia di follow-up",Sistema TS
+PRF-2026-0006,VRDLGU80M15H501Z,MED-120102,012745098,2026-05-17,1,"Tachipirina 1000mg- 1 confezione al bisogno",Sistema TS
+PRF-2026-0007,BNCGNN75T10F205A,MED-120102,025218041,2026-05-18,2,"Oki 80mg bustine- 2 confezioni - Trattamento antinfiammatorio",Sistema TS
+PRF-2026-0008,FRRLRA92A01H501F,MED-120102,031835012,2026-05-19,1,"Brufen 600mg- 1 confezione post-estrattiva",Sistema TS
+PRF-2026-0009,RSSMRA80A01H501U,MED-120102,012745098,2026-05-20,1,"Paracetamolo 1000mg- 1 conf per stato influenzale",Sistema TS
