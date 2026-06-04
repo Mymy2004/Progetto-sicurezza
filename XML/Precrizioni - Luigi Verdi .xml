@@ -11,14 +11,14 @@
     <languageCode code="it-IT"/>
     <recordTarget>
         <patientRole>
-            <id root="2.16.840.1.113883.2.9.4.3.2" extension="RSSMRA80A01H501U"/>
+            <id root="2.16.840.1.113883.2.9.4.3.2"" extension="RSSMRA80A01H501U"/>
             <patient><name><given>Mario</given><family>Rossi</family></name></patient>
         </patientRole>
     </recordTarget>
     <author>
         <time value="20260511113000+0200"/>
         <assignedAuthor>
-            <id root="2.16.840.1.113883.2.9.4.3.2" extension="MED12345"/>
+            <id root="2.16.840.1.113883.2.9.4.3.2" extension="MED-120103"/>
             <assignedPerson><name><given>Luigi</given><family>Verdi</family></name></assignedPerson>
         </assignedAuthor>
     </author>
